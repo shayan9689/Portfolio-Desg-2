@@ -10,27 +10,31 @@ const Contact = () => {
   });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
+  const formId = import.meta.env.VITE_FORMSPREE_ID;
+  const formAction = formId
+    ? `https://formspree.io/f/${formId}`
+    : "";
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!formId) {
+      setStatus("error");
+      return;
+    }
     setStatus("sending");
     const form = e.currentTarget;
-    const action = form.getAttribute("action");
-    if (action && action.startsWith("https://formspree.io")) {
-      fetch(action, {
-        method: "POST",
-        body: new FormData(form),
-        headers: { Accept: "application/json" },
+    fetch(formAction, {
+      method: "POST",
+      body: new FormData(form),
+      headers: { Accept: "application/json" },
+    })
+      .then((res) => {
+        if (res.ok) {
+          setStatus("sent");
+          setFormData({ name: "", email: "", message: "" });
+        } else setStatus("error");
       })
-        .then((res) => {
-          if (res.ok) {
-            setStatus("sent");
-            setFormData({ name: "", email: "", message: "" });
-          } else setStatus("error");
-        })
-        .catch(() => setStatus("error"));
-    } else {
-      setStatus("error");
-    }
+      .catch(() => setStatus("error"));
   };
 
   const handleChange = (
@@ -56,7 +60,7 @@ const Contact = () => {
             <form
               className="contact-form"
               onSubmit={handleSubmit}
-              action={`https://formspree.io/f/${import.meta.env.VITE_FORMSPREE_ID ?? ""}`}
+              action={formAction}
               method="POST"
             >
               <input
@@ -113,7 +117,11 @@ const Contact = () => {
                   ? "Sending..."
                   : status === "sent"
                     ? "Sent ✓"
-                    : "Send message"}
+                    : status === "error" && !formId
+                      ? "Configure Formspree (see README)"
+                      : status === "error"
+                        ? "Send failed — try again"
+                        : "Send message"}
               </button>
             </form>
           </div>
