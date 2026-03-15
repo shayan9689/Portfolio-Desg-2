@@ -1,34 +1,115 @@
-# My Portfolio Wesbite - Overview 🚀
+# Shayan Umair — AI & Data Science Portfolio
 
-This repository contains the open source version of my porfolio website.
-Do check it out!
+> **Portfolio website** · React · TypeScript · GSAP · Three.js · Vite
 
-## Instructions 🛠️
+---
 
-I have modified the gsap club plugins with the trial plugins, but with the trial plugin you cannot host it🔴. So for Club plugins, Check out here: https://gsap.com/docs/v3/Installation/
+## ✨ Overview
 
-**Techstack** - React, TypeScript, GSAP, ThreeJS, WebGL, HTML, Css, JavaScript
+Open-source portfolio for **Shayan Umair**, showcasing experience in **AI, Data Science, and Full-Stack Development**. Built with a modern stack, smooth scroll animations, and a responsive layout.
 
-![Portfolio-Preview](public/images/preview.png)
+---
 
-## Contact form (receive emails) 📧
+## 🛠 Tech Stack
 
-To receive messages from the contact form in your inbox:
+| Category      | Technologies |
+|---------------|--------------|
+| **Frontend**  | React 18, TypeScript, Vite |
+| **Styling**   | CSS3, CSS Variables |
+| **Animation** | GSAP (ScrollTrigger, ScrollSmoother, SplitText) |
+| **3D**        | Three.js, React Three Fiber, Drei |
+| **Icons**     | React Icons |
 
-1. **Sign up at [Formspree](https://formspree.io)** (free).
-2. **Create a new form** and set the notification email to the address where you want to receive messages (e.g. `shayan.umairadditise@gmail.com`).
-3. **Copy your form ID** from the form’s integration page (it looks like `xjvqwkqz`; the URL is `https://formspree.io/f/YOUR_FORM_ID`).
-4. **Local development:** In the project root, create a file named `.env` and add:
-   ```env
-   VITE_FORMSPREE_ID=your_form_id_here
-   ```
-5. **Production (Vercel):** In your Vercel project → **Settings** → **Environment Variables**, add:
-   - **Name:** `VITE_FORMSPREE_ID`
-   - **Value:** your Formspree form ID  
-   Then **redeploy** the project.
+---
 
-After this, form submissions will be sent to Formspree and you’ll get an email for each submission.
+## 📁 Project Structure
 
-## License
+```
+├── public/          # Static assets, images, models
+├── src/
+│   ├── components/   # React components (About, Career, Contact, Services, Work, etc.)
+│   ├── context/     # React context (e.g. Loading)
+│   ├── data/        # Static data
+│   └── utils/       # GSAP helpers, section animations, split text
+├── index.html
+├── package.json
+├── vite.config.ts
+└── vercel.json      # Vercel deployment config
+```
 
-This project is open source and available under the [MIT License](LICENSE).
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- **Node.js** 18+ and **npm** (or yarn/pnpm)
+
+### Install & Run
+
+```bash
+# Clone the repository
+git clone https://github.com/shayan9689/Umair-portfolio.git
+cd Umair-portfolio
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Build for Production
+
+```bash
+npm run build
+npm run preview   # Optional: preview production build locally
+```
+
+---
+
+## 📧 Contact Form
+
+The contact form sends messages to a custom backend. For local development or your own deployment:
+
+- **Backend URL:** `https://shayan-personal-assistant.vercel.app/contact`
+- **Method:** `POST` with JSON body: `name`, `email`, `subject`, `message`
+
+No environment variables are required in this repo for the form to work with the default endpoint.
+
+---
+
+## 🌐 Deploy on Vercel
+
+1. **Push your code** to GitHub (or connect another Git provider in Vercel).
+
+2. **Import the project** in [Vercel](https://vercel.com):
+   - **New Project** → Import your repository.
+   - Vercel will use the existing **`vercel.json`** in the project (build command, output directory, SPA rewrites).
+
+3. **Deploy:**
+   - Click **Deploy**. Vercel runs `npm run build` and serves the `dist` folder.
+   - Optional: add **Environment Variables** in **Project Settings** if you add any later.
+
+4. **Custom domain (optional):** In **Project Settings → Domains**, add your domain.
+
+---
+
+## 📄 License
+
+This project is open source under the **[MIT License](LICENSE)**.
+
+---
+
+## 👤 Author
+
+**Shayan Umair**  
+- Portfolio: [shayan-portfolio-lac.vercel.app](https://shayan-portfolio-lac.vercel.app/)  
+- GitHub: [shayan9689](https://github.com/shayan9689)  
+- LinkedIn: [Shayan Umair](https://www.linkedin.com/in/shayan-umair-3b2577225/)
+
+---
+
+*Built with React, TypeScript, GSAP, and Vite.*
