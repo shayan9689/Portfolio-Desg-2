@@ -95,14 +95,14 @@ const WhatIDo = () => {
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">React.js</div>
-                <div className="what-tags">Angular</div>
-                <div className="what-tags">Next.js</div>
-                <div className="what-tags">TypeScript</div>
-                <div className="what-tags">JavaScript</div>
-                <div className="what-tags">Material UI</div>
-                <div className="what-tags">HTML5</div>
-                <div className="what-tags">CSS3</div>
+                <div className="what-tags">Python</div>
+                <div className="what-tags">TensorFlow</div>
+                <div className="what-tags">PyTorch</div>
+                <div className="what-tags">Scikit-learn</div>
+                <div className="what-tags">Pandas</div>
+                <div className="what-tags">SQL</div>
+                <div className="what-tags">Jupyter</div>
+                <div className="what-tags">MLOps</div>
               </div>
               <div className="what-arrow"></div>
             </div>
@@ -134,14 +134,14 @@ const WhatIDo = () => {
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">Node.js</div>
-                <div className="what-tags">NestJS</div>
-                <div className="what-tags">Express.js</div>
-                <div className="what-tags">MongoDB</div>
-                <div className="what-tags">PostgreSQL</div>
-                <div className="what-tags">REST APIs</div>
-                <div className="what-tags">Microservices</div>
-                <div className="what-tags">Python</div>
+                <div className="what-tags">Data Analysis</div>
+                <div className="what-tags">NLP</div>
+                <div className="what-tags">Computer Vision</div>
+                <div className="what-tags">Deep Learning</div>
+                <div className="what-tags">Data Viz</div>
+                <div className="what-tags">Statistics</div>
+                <div className="what-tags">Cloud (AWS/GCP)</div>
+                <div className="what-tags">R</div>
               </div>
               <div className="what-arrow"></div>
             </div>
