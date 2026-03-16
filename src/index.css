@@ -34,7 +34,14 @@ h6 {
 }
 
 body {
-  overflow: hidden;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: pan-y;
+}
+@media screen and (min-width: 1025px) {
+  body {
+    overflow: hidden;
+  }
 }
 
 a {
@@ -85,12 +92,28 @@ body {
   position: relative;
 }
 
-/* Inset content between left social icons and right resume button */
+/* Responsive content padding */
+#smooth-content .container-main {
+  box-sizing: border-box;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+@media screen and (min-width: 480px) {
+  #smooth-content .container-main {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media screen and (min-width: 768px) {
+  #smooth-content .container-main {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
 @media screen and (min-width: 900px) {
   #smooth-content .container-main {
     padding-left: 80px;
     padding-right: 80px;
-    box-sizing: border-box;
   }
 }
 
@@ -138,6 +161,15 @@ body {
   body {
     --cWidth: 94%;
   }
+}
+
+.techstack-fallback {
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(234, 229, 236, 0.5);
+  font-size: 14px;
 }
 
 @media screen and (max-width: 900px) {

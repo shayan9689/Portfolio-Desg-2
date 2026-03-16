@@ -459,3 +459,29 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media only screen and (max-width: 480px) {
+  .work-section {
+    padding: 40px 0;
+  }
+
+  .work-section h2 {
+    font-size: clamp(28px, 8vw, 40px);
+    margin-bottom: 24px;
+  }
+
+  .carousel-arrow {
+    min-width: 44px;
+    min-height: 44px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .project-card-body {
+    padding: 16px 20px;
+  }
+
+  .project-card-title {
+    font-size: 15px;
+  }
+}

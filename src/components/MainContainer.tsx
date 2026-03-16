@@ -11,6 +11,7 @@ import WhatIDo from "./WhatIDo";
 import Work from "./Work";
 import setSplitText from "./utils/splitText";
 import { registerSectionAnimations } from "./utils/sectionAnimations";
+import TechStackMobile from "./TechStackMobile";
 
 const TechStack = lazy(() => import("./TechStack"));
 
@@ -61,10 +62,12 @@ const MainContainer = ({ children }: PropsWithChildren) => {
             <Services />
             <Career />
             <Work />
-            {isDesktopView && (
-              <Suspense fallback={<div>Loading....</div>}>
+            {isDesktopView ? (
+              <Suspense fallback={<div className="techstack-fallback">Loading…</div>}>
                 <TechStack />
               </Suspense>
+            ) : (
+              <TechStackMobile />
             )}
             <Contact />
           </div>

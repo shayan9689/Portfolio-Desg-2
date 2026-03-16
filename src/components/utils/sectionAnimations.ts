@@ -38,8 +38,12 @@ function createReplayableReveal(
 /**
  * Register scroll-triggered reveal animations.
  * Animations run every time you scroll into a section (from above or below).
+ * On narrow viewports we skip to avoid lag on low-powered devices.
  */
 export function registerSectionAnimations() {
+  const isNarrow = typeof window !== "undefined" && window.matchMedia("(max-width: 1024px)").matches;
+  if (isNarrow) return;
+
   const wrapper = document.querySelector("#smooth-wrapper");
   const scroller = wrapper ?? undefined;
 
